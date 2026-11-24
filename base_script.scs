@@ -1,6 +1,6 @@
 <ScriptEngine>
   <Login>
-    <ServerAddress>http://management_server_address</ServerAddress>
+    <ServerAddress>https://management_server_address</ServerAddress>
     <AuthenticationType>Simple</AuthenticationType>
     <UserName>username</UserName>
     <!--
