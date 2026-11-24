@@ -1,0 +1,28 @@
+<ScriptEngine>
+  <Login>
+    <ServerAddress>http://management_server_address</ServerAddress>
+    <AuthenticationType>Simple</AuthenticationType>
+    <UserName>username</UserName>
+    <!--
+      Milestone recommends omitting the password from the startup script.
+      Users must log in manually once and select "Remember password".
+      The password will then be stored encrypted in:
+      %APPDATA%\Milestone\Smart Client\LoginHistory.XML
+    -->
+    <Password>PlainText_not_recommended</Password>
+    <AutoLogin>True</AutoLogin>
+  </Login>
+  <Script>
+    SCS.Application.ShowLive();
+    SCS.Application.ShowFullScreenView();
+
+    // Main monitor (configured in Windows display settings)
+    SCS.Views.SelectView("Monitores.Layouts_CCTV.CCTV_2_Alto");
+
+    // Monitor 2 (replace spaces with underscores)
+    SCS.MultiWindow.MultiWindowOpenFullScreenWindow("group.subfolder_1.cctv_view_2", 1);
+
+    // Monitor 3 (private views start with "Private")
+    SCS.MultiWindow.MultiWindowOpenFullScreenWindow("Private.folder.view_name", 2);
+  </Script>
+</ScriptEngine>
